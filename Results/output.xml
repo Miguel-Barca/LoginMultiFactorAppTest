@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-01-21T19:05:22.198023" rpa="false" schemaversion="5">
+<suite id="s1" name="Data-Driven-Ext-Base" source="/Users/miguelbarca/Downloads/data-driven-ext-base">
+<suite id="s1-s1" name="Tests" source="/Users/miguelbarca/Downloads/data-driven-ext-base/Tests">
+<suite id="s1-s1-s1" name="LoginMultifactor" source="/Users/miguelbarca/Downloads/data-driven-ext-base/Tests/LoginMultifactor.robot">
+<test id="s1-s1-s1-t1" name="Getting Valid Credentials Test" line="35">
+<kw name="Begin Web Test" owner="Common" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-21T19:05:22.278980" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-21T19:05:22.278838" elapsed="1.353627"/>
+</kw>
+<status status="PASS" start="2024-01-21T19:05:22.278442" elapsed="1.354348"/>
+</kw>
+<kw name="Get Valid Credentials" owner="LoginApp">
+<kw name="Navigate To" owner="GetLoginCredentials">
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-01-21T19:05:23.634276" level="INFO">${SignInUrl} = https://seleniumbase.io/realworld/signup</msg>
+<var>${SignInUrl}</var>
+<arg>SEPARATOR=/</arg>
+<arg>${BASE_URL.${ENVIRONMENT}}</arg>
+<arg>${CREDENTIALS_URL}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-01-21T19:05:23.633778" elapsed="0.000755"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-01-21T19:05:23.634975" level="INFO">Opening url 'https://seleniumbase.io/realworld/signup'</msg>
+<arg>${SignInUrl}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-01-21T19:05:23.634677" elapsed="0.692032"/>
+</kw>
+<status status="PASS" start="2024-01-21T19:05:23.633594" elapsed="0.693280"/>
+</kw>
+<kw name="Get Login Credentials" owner="GetLoginCredentials">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-01-21T19:05:24.342028" level="INFO">${username} = demo_user</msg>
+<var>${username}</var>
+<arg>locator=${DEMO_USER_XPATH}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-21T19:05:24.327289" elapsed="0.014834"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-01-21T19:05:24.350717" level="INFO">${password} = secret_pass</msg>
+<var>${password}</var>
+<arg>locator=${PASSWORD_XPATH}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-21T19:05:24.342267" elapsed="0.008524"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-01-21T19:05:24.359169" level="INFO">${auth_code} = GAXG2MTEOR3DMMDG</msg>
+<var>${auth_code}</var>
+<arg>locator=${AUTH_CODE_XPATH}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-21T19:05:24.350909" elapsed="0.008337"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-01-21T19:05:24.359375" elapsed="0.000125"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-01-21T19:05:24.359683" level="INFO">${USER_VALID_CREDENTIALS.Username} = demo_user</msg>
+<var>${USER_VALID_CREDENTIALS.Username}</var>
+<arg>${username}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-01-21T19:05:24.359568" elapsed="0.000156"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>message=${USER_VALID_CREDENTIALS.Username}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-01-21T19:05:24.359795" elapsed="0.000452"/>
+</kw>
+<status status="PASS" start="2024-01-21T19:05:24.327025" elapsed="0.033320"/>
+</kw>
+<status status="PASS" start="2024-01-21T19:05:23.633189" elapsed="0.727211"/>
+</kw>
+<kw name="End Web Test" owner="Common" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-01-21T19:05:24.360769" elapsed="0.069355"/>
+</kw>
+<status status="PASS" start="2024-01-21T19:05:24.360593" elapsed="0.069647"/>
+</kw>
+<status status="PASS" start="2024-01-21T19:05:22.278057" elapsed="2.152268"/>
+</test>
+<doc>Demonstrate a need for data-driven testing</doc>
+<status status="PASS" start="2024-01-21T19:05:22.209443" elapsed="2.221358"/>
+</suite>
+<status status="PASS" start="2024-01-21T19:05:22.208644" elapsed="2.222826"/>
+</suite>
+<status status="PASS" start="2024-01-21T19:05:22.199968" elapsed="2.231927"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Data-Driven-Ext-Base">Data-Driven-Ext-Base</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Data-Driven-Ext-Base.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="LoginMultifactor">Data-Driven-Ext-Base.Tests.LoginMultifactor</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
