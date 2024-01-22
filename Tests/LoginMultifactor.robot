@@ -3,7 +3,6 @@ Documentation  Demonstrate a need for data-driven testing
 Resource  ../Data/InputData.robot
 Resource  ../Resources/Common.robot
 Resource  ../Resources/LoginApp.robot
-Library    ./totp.py
 Test Setup  Common.Begin Web Test
 Test Teardown  Common.End Web Test
 
