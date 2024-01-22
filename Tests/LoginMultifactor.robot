@@ -13,29 +13,37 @@ Test Teardown  Common.End Web Test
 *** Test Cases ***
 Login with invalid username should see correct error message at login
     [Documentation]  invalid username
-    [Tags]    negative
+    [Tags]           negative
     LoginApp.Navigate to Sign In Page
     LoginApp.Attempt Login  ${INVALID_USERNAME}
     LoginApp.Verify Login Page Error Message  ${INVALID_USERNAME.ExpectedErrorMessage}
 
 Login with invalid password should show correct error message
     [Documentation]  invalid password
-    [Tags]    negative
+    [Tags]           negative
     LoginApp.Navigate to Sign In Page
     LoginApp.Attempt Login  ${INVALID_PASSWORD_USER}
     LoginApp.Verify Login Page Error Message  ${INVALID_PASSWORD_USER.ExpectedErrorMessage}
 
 Login with blank email and password should show correct error message
     [Documentation]  blank Credentials
-    [Tags]    negative
+    [Tags]           negative
     LoginApp.Navigate to Sign In Page
     LoginApp.Attempt Login  ${BLANK_CREDENTIALS_USER}
     LoginApp.Verify Login Page Error Message  ${BLANK_CREDENTIALS_USER.ExpectedErrorMessage}
 
 Getting Valid Credentials - With TOTP Multifactor Login
     [Documentation]  Generate TOTP and proceed to Login with valid Credentials
-    [Tags]    TOTP
+    [Tags]           TOTP
     LoginApp.Get Valid Credentials
     LoginApp.Navigate to Sign In Page
     LoginApp.Attempt Login (with auth_code)  ${USER_VALID_CREDENTIALS}
     Sleep  5s
+
+Invalid Login Scenarios should display correct errror message
+    [Documentation]  Create Templates for Data-Driven Test
+    [Tags]           Template
+    [Template]       Test Multiple Scenarios
+    ${INVALID_USERNAME}
+    ${INVALID_PASSWORD_USER} 
+    ${BLANK_CREDENTIALS_USER}

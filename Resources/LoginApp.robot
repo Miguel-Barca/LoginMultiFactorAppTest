@@ -27,3 +27,9 @@ Get Valid Credentials
     GetLoginCredentials.Navigate To
     Get Login Credentials.Get Login Credentials (Secret)
     GetLoginCredentials.Generate TOTP Token  ${USER_VALID_CREDENTIALS.Secret}
+
+Test Multiple Scenarios
+    [Arguments]   ${Credentials}
+    Navigate to Sign In Page
+    Attempt Login  ${Credentials} 
+    Verify Login Page Error Message  ${Credentials.ExpectedErrorMessage}
