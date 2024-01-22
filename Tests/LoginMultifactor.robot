@@ -34,6 +34,8 @@ Login with blank email and password should show correct error message
     LoginApp.Verify Login Page Error Message  ${BLANK_CREDENTIALS_USER.ExpectedErrorMessage}
 
 Getting Valid Credentials - With TOTP Multifactor Login
+    [Documentation]  Generate TOTP and proceed to Login with valid Credentials
+    [Tags]    TOTP
     LoginApp.Get Valid Credentials
     LoginApp.Navigate to Sign In Page
     LoginApp.Attempt Login (with auth_code)  ${USER_VALID_CREDENTIALS}
