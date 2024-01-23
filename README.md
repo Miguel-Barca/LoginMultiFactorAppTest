@@ -21,7 +21,7 @@ Follow these steps to set up and run the project locally:
 
 Clone the Repository::
 
-    git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/Miguel-Barca/LoginMultiFactorAppTest.git
 
     
 
